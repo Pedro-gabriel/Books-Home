@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<title>Book's Home</title>
+	<style>
+		body {
+			font-family: 'Roboto', sans-serif;
+		}
+	</style>
+</head>
+
+<body style="min-width:372px;">
+	<a name="topo"></a>
+	<!--mb-3 margem inferior de 3u-->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light border-bottom shadow-sm mb-3">
+	
+		<div class="container-fluid">
+			<a class="navbar-brand" style="color: #8B008B;" href=""><strong>Book's Home</strong></a>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link active" style="color: #a700a7" aria-current="page" href="#">Home</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" style="color: #a700a7" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Livros
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<li><a class="dropdown-item" style="color: #a700a7 " href="#">a venda</a></li>
+							<li><a class="dropdown-item" style="color: #a700a7 " href="#">troca</a></li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" style="color: #a700a7" href="#">Login</a>
+					</li>
+				</ul>
+			</div>
+			<form class="d-flex">
+				<input class="form-control me-2" type="search" placeholder="O que procura..." aria-label="Search">
+				<button class="btn" style="background-color: #8B008B; border-color: #8B008B" type="submit">
+					<a href="#" class="nav-link" style="color: #FFFF;">
+						<svg class="bi" width="14" height="14" fill="currentColor">
+							<use xlink:href="/bootstrap-icons.svg#search" />
+						</svg>		
+					</a>	
+				</button>
+			</form>
+			<button class="navbar-toggler" type="button" style="background-color: #8B008B;" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+	</nav>
+
+	<header class="container">
+		<br><br><br><br>
+		<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" src="/img/A.jpg" alt="Primeiro Slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="/img/slide01.jpg" alt="Segundo Slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="/img/slide01.jpg" alt="Terceiro Slide">
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only"> </span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only"> </span>
+			</a>
+		</div>
+	</header>
+
+	<main>
+		<div class="container">
+			<hr class="mt-5">
+			<br>
+			<h1 style="color: #000001"><strong>Novidades</strong></h1>
+			<br>
+			<div class="row">
+				<div class="col-xl-3 col-lg-4 col-md-5 col-sm-7 d-flex align-items-stretch">
+					<div class="card text-center bg-light">
+						<a href="" class="position-absolute right-0 p-2 text-dark">
+							<svg class="bi" width="24" height="24">
+								<use xlink:href="/bootstrap-icons.svg#suit-heart"></use>
+							</svg>
+						</a>
+						<img src= "/img/livro.png" class="card-img-top" alt="Harry Potter e a Pedra Filosofal">
+						<div class="card-hearder"> 
+							R$ 30,00
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Harry Potter e a Pedra Filosofal</h5>
+							<p class="card-text">
+								Harry Potter e a Pedra Filosofal é o primeiro dos sete livros da série de fantasia Harry Potter. O livro conta a história de Harry Potter, um órfão criado pelos tios que descobre, em seu décimo primeiro aniversário, que é um bruxo.
+								<br>Autor(a): J K Rowling
+								<br>Editora: Rocco
+								<br>Ano: 1997
+							</p>
+						</div>
+						<div class="card-footer">
+							<form class="d-block">
+								<button class="btn btn-dark">
+									Adicionar ao carrinho
+								</button>
+							</form>
+							<small class="text-dark">7 disponíveis</small>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-xl-3 col-lg-4 col-md-5 col-sm-7 d-flex align-items-stretch">
+					<div class="card text-center bg-light">
+						<a href="" class="position-absolute right-0 p-2 text-dark">
+							<svg class="bi" width="24" height="24">
+								<use xlink:href="/bootstrap-icons.svg#suit-heart"></use>
+							</svg>
+						</a>
+						<img src="/img/livro.png" class="card-img-top" alt="Harry Potter e a Pedra Filosofal">
+						<div class="card-hearder"> 
+							R$ 30,00
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Harry Potter e a Pedra Filosofal</h5>
+							<p class="card-text">
+								Harry Potter e a Pedra Filosofal é o primeiro dos sete livros da série de fantasia Harry Potter. O livro conta a história de Harry Potter, um órfão criado pelos tios que descobre, em seu décimo primeiro aniversário, que é um bruxo.
+								<br>Autor(a): J K Rowling
+								<br>Editora: Rocco
+								<br>Ano: 1997
+							</p>
+						</div>
+						<div class="card-footer">
+							<form class="d-block">
+								<button class="btn btn-dark">
+									Adicionar ao carrinho
+								</button>
+							</form>
+							<small class="text-dark">7 disponíveis</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-4 col-md-5 col-sm-7 d-flex align-items-stretch">
+					<div class="card text-center bg-light">
+						<a href="" class="position-absolute right-0 p-2 text-dark">
+							<svg class="bi" width="24" height="24">
+								<use xlink:href="/bootstrap-icons.svg#suit-heart"></use>
+							</svg>
+						</a>
+						<img src="/img/livro.png" class="card-img-top" alt="Harry Potter e a Pedra Filosofal">
+						<div class="card-hearder"> 
+							R$ 30,00
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Harry Potter e a Pedra Filosofal</h5>
+							<p class="card-text">
+								Harry Potter e a Pedra Filosofal é o primeiro dos sete livros da série de fantasia Harry Potter. O livro conta a história de Harry Potter, um órfão criado pelos tios que descobre, em seu décimo primeiro aniversário, que é um bruxo.
+								<br>Autor(a): J K Rowling
+								<br>Editora: Rocco
+								<br>Ano: 1997
+							</p>
+						</div>
+						<div class="card-footer">
+							<form class="d-block">
+								<button class="btn btn-dark">
+									Adicionar ao carrinho
+								</button>
+							</form>
+							<small class="text-dark">7 disponíveis</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-4 col-md-5 col-sm-7 d-flex align-items-stretch">
+					<div class="card text-center bg-light">
+						<a href="" class="position-absolute right-0 p-2 text-dark">
+							<svg class="bi" width="24" height="24">
+								<use xlink:href="/bootstrap-icons.svg#suit-heart"></use>
+							</svg>
+						</a>
+						<img src="/img/livro.png" class="card-img-top" alt="Harry Potter e a Pedra Filosofal">
+						<div class="card-hearder"> 
+							R$ 30,00
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Harry Potter e a Pedra Filosofal</h5>
+							<p class="card-text">
+								Harry Potter e a Pedra Filosofal é o primeiro dos sete livros da série de fantasia Harry Potter. O livro conta a história de Harry Potter, um órfão criado pelos tios que descobre, em seu décimo primeiro aniversário, que é um bruxo.
+								<br>Autor(a): J K Rowling
+								<br>Editora: Rocco
+								<br>Ano: 1997
+							</p>
+						</div>
+						<div class="card-footer">
+							<form class="d-block">
+								<button class="btn btn-dark">
+									Adicionar ao carrinho
+								</button>
+							</form>
+							<small class="text-dark">7 disponíveis</small>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<h1><center>AAAAAAAAAAAAAA</center></h1>
+			<h1><center>AAAAAAAAAAAAAA</center></h1>
+			<h1><center>AAAAAAAAAAAAAA</center></h1>
+			<h1><center>AAAAAAAAAAAAAA</center></h1>
+			<h1><center>AAAAAAAAAAAAAA</center></h1>
+		</div>
+	
+	</main>
+
+	<footer class="border-top text-muted bg-light">
+		<div class="container">
+			<div class="row py-3">
+				<div class="col-12 col-md-4 text-center">
+					<a href="#" class="text-decoration-none" style="color: #868686">Sobre nós</a>
+				</div>
+				<div class="col-12 col-md-4 text-center text-md-left">
+					&copy; 2021 - Book's Home
+				</div>
+				<div class="col-12 col-md-4 text-center">
+					<a href="#topo" class="text-decoration-none" style="color: #868686">Voltar ao topo</a>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+	<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+
+</html>
