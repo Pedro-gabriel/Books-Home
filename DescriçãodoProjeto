@@ -1,0 +1,26 @@
+Nome do sistema: Book´s Home
+Equipe: A
+Membros: Aline Araujo, Breno Nobre, Eandro, Lorena Amaro, Getúlio Macedo e Pedro Gabriel.
+Matéria: Engenharia de Software
+Professor: Camilo Almendra
+
+Descrição do sistema: Sistema de Livraria, onde os usuários pode troca seus livros e realizar negociações.
+
+Linguagens usadas:
+  Front-end: HTML, CSS e JAVASCRIPT
+  Back-end: Node JS, Express e Knex
+
+Banco: PostgreeSQL
+
+Teste: Postman
+
+Ferramenta de modelagem: Asth UML
+
+Link´s
+
+Controle de requisitos:  https://trello.com/invite/b/bn7PgOst/0d8bccff40c226ced64ac96cb2f34070/trabalho-de-eng-de-soft
+
+Diagrama de componentes
+  - Componentes: 
+  - Classes:
+
