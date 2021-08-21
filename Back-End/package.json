@@ -1,0 +1,19 @@
+{
+  "name": "projetoes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.ls"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.95.9",
+    "pg": "^8.7.1"
+  }
+}
