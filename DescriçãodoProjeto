@@ -4,17 +4,19 @@ Membros: Aline Araujo, Breno Nobre, Lorena Amaro, Getúlio Macedo e Pedro Gabrie
 Matéria: Engenharia de Software
 Professor: Camilo Almendra
 
-Descrição do sistema: Sistema de Livraria, onde os usuários pode troca seus livros e realizar negociações.
+Descrição do sistema: Sistema de troca de livros, onde os usuários pode troca seus livros e realizar negociações através do contato direto com o usuário.
 
 Linguagens usadas:
-  Front-end: HTML, CSS e JAVASCRIPT
-  Back-end: Node JS, Express e Knex
+  Front-end: HTML, CSS e JAVASCRIPT e Bootstrap.
+  Back-end: Node JS, Express, Knex, Axios e Cors.
 
 Banco: PostgreeSQL
 
 Teste: Postman
 
 Ferramenta de modelagem: Asth UML
+
+Requisitos: Trello
 
 Link´s
 
@@ -25,5 +27,6 @@ Controle de requisitos:  https://trello.com/invite/b/bn7PgOst/0d8bccff40c226ced6
 Testes: https://www.getpostman.com/collections/99bf3644fccac8f19f7b
 
 Diagrama de componentes
-  - Componentes: https://drive.google.com/file/d/15fDxy6xByyXO-qURebHvn0ntgvLXp1me/view?usp=sharing
-  - Classes: https://drive.google.com/file/d/1WLPFQr9Z-Ejn3esNpv9iwjVL1U5NDzCD/view?usp=sharing
+  - Componentes: https://drive.google.com/file/d/1FlJqaTX7ZEhhbHdbp84d3i4DoBXTC8Kz/view?usp=sharing
+  
+  - Classes: https://drive.google.com/file/d/1IqDkINHrt2cQmuZX3H4C-TNkZx5qMixK/view?usp=sharing
