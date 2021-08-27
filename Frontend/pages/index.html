@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+
+	<script type="text/javascript">
+		var btn_log = -1 ;
+
+
+
+
+  function editar(button){
+
+  let buscar = document.querySelectorAll('#card-body');
+
+ //innerText
+
+
+
+
+
+
+
+  let id_livros = buscar[button].childNodes[0].innerText;
+  let titulo_livros = buscar[button].childNodes[1].innerText;
+  let descricao_livros = buscar[button].childNodes[2].innerText;
+  let autor_livros = buscar[button].childNodes[3].innerText;
+  let estado_livros = buscar[button].childNodes[4].innerText;
+  let telefone_livros = buscar[button].childNodes[5].innerText;
+
+  let novo = id_livros.split('#');
+
+  let livro_id = "Editar Dados Livro#"+novo[1];
+
+
+  
+
+
+
+telefone
+
+
+  
+  document.getElementById("titulo").value = titulo_livros;
+  document.getElementById("descricao").value = descricao_livros;
+  document.getElementById("autor").value = autor_livros;
+  document.getElementById("estado").value = estado_livros;
+  document.getElementById("telefone").value = telefone_livros;
+  document.getElementById("id_livro").innerHTML = livro_id;
+
+}
+
+
+function deletar(button){
+//console.log('#dados > *');
+  let buscar = document.querySelectorAll('#card-body');
+  let id_cases = buscar[button].childNodes[0].innerText;
+  let novo = id_cases.split('#');
+
+  var dialog = confirm("Você realmente deseja deletar?");
+
+
+
+    if (dialog == true) {
+      Api.isDelete(novo[1]);
+      document.location.reload(true);
+    } else {
+      
+    }
+
+//recebo parametro qual butao eu click e pego o filho 
+
+}
+
+
+
+
+
+
+
+
+	</script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<title>Book's Home</title>
+	<style>
+		body {
+			font-family: 'Roboto', sans-serif;
+		}
+
+		p.truncate-1l {
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	</style>
+</head>
+
+<body style="min-width:372px;">
+	<a name="topo"></a>
+	<!--mb-3 margem inferior de 3u-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-light border-bottom shadow-sm mb-3">
+	
+		<div class="container-fluid">
+			<a class="navbar-brand" style="color: #8B008B;" href=""><strong>Book's Home</strong></a>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link active" style="color: #a700a7" aria-current="page" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" style="color: #a700a7" href="cadastrar_livro.html">Cadastrar Livro</a>
+					</li>
+          <li class="nav-item">
+						<a class="nav-link" style="color: #a700a7" href="login.html">Acessar minha conta</a>
+					</li>
+				</ul>
+			</div>
+			<form class="d-flex">
+				<input class="form-control me-2" type="search" placeholder="O que procura..." aria-label="Search">
+				<button class="btn" style="background-color: #8B008B; border-color: #8B008B" type="submit">
+					<a href="#" class="nav-link" style="color: #FFFF;">
+            <svg class="bi" width="16" height="16" fill="currentColor">
+              <use xlink:href="/bootstrap-icons.svg#search" />
+          </svg>
+					</a>	
+				</button>
+			</form>
+			<button class="navbar-toggler" type="button" style="background-color: #8B008B;" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+	</nav>
+
+	<header>
+		
+		<div class="row">
+			<div class="col"> 
+				<center>
+					<br><br><br><br><br>
+					<h1 style="color: #FFF; background-color: #8B008B; font-size: 72px;"> Os best-sellers você encontra aqui </h1>
+				</center>
+			</div>
+			<div class="col">
+				<div style="text-align: center">
+					<img src="img/hp roxo.jpg" alt="Harry Potter e o Prisioneiro de Askaban">
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<div class="container">
+
+
+
+
+
+        <!-- The Modal -->
+        <div class="modal" id="modal_livros">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="id_livro">Editar Dados</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <label>Titulo</label>
+                        <input id="titulo" placeholde="" value="" class="form-control">
+                        <br>
+                        <label>Descricao</label>
+                        <input id="descricao" placeholde="" value="" class="form-control">
+                        <br>
+                        <label>Autor</label>
+                        <input id="autor" placeholde="" value="" class="form-control">
+                       <label>Estado:</label>
+                          <select name="estado" id="estado" class="form-control">
+                            <option value="Novo">Novo</option>
+                            <option value="Velho">Velho</option>
+                          </select>
+                      <label>Telefone</label>
+                      <input id="telefone" placeholde="" value="" class="form-control">
+
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-purple" data-dismiss="modal"
+                            onclick="" id="update">Salvar</button>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+			<hr class="mt-5">
+			<br>
+			<h1><strong>Livros</strong></h1>
+			<br>
+			<div class="row" id="livros">
+				
+			</div>
+
+
+
+
+		<br><br>
+
+	</main>
+
+	<footer class="border-top text-muted bg-light">
+		<div class="container">
+			<div class="row py-3">
+				<div class="col-12 col-md-4 text-center">
+					<a href="contato.html" class="text-decoration-none" style="color: #868686">Sobre nós</a>
+				</div>
+				<div class="col-12 col-md-4 text-center text-md-left">
+					&copy; 2021 - Book's Home
+				</div>
+				<div class="col-12 col-md-4 text-center">
+					<a href="#topo" class="text-decoration-none" style="color: #868686">Voltar ao topo</a>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+	<script src="bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+
+<script type="text/javascript">
+	
+   class Api{
+     static async getLivros (page){
+       axios.get(`http://localhost:3333/products?page=${page}`)
+      .then(response => list_livros(response.data))
+      .catch(error => console.log(error)) 
+     }
+
+    static async isDelete (id){
+       axios.delete(`http://localhost:3333/products/${id}`)
+      .then(response => (response.data))
+      .catch(error => console.log(error)) 
+     }
+
+  }
+
+ Api.getLivros('1');
+
+
+ const list_livros = ( products ) => {
+    btn_log = btn_log + 1
+
+    const bylivros = document.getElementById('livros')
+    products.map(products => {
+
+      const div_flex = document.createElement('div')
+      div_flex.setAttribute("class", "col-xl-3 col-lg-4 col-md-5 col-sm-7 d-flex align-items-stretch");
+
+      const div_card = document.createElement('div')
+      div_card.setAttribute("class", "card text-center bg-light");
+
+      const a_card = document.createElement('a')
+      a_card.setAttribute("class", "position-absolute right-0 p-2 text-dark");
+
+//>>
+
+      const img_card = document.createElement('img')
+      img_card.setAttribute('src','img/hp roxo.jpg');
+      img_card.setAttribute("class", "card-img-top");
+
+
+      const div_card_body = document.createElement('div')
+      div_card_body.setAttribute("id", "card-body");
+      div_card_body.setAttribute("class", "card-body");
+
+
+      //
+
+      const livro_cod_h5 = document.createElement("h5");
+      livro_cod_h5.setAttribute("class", "card-title");
+      livro_cod_h5.innerHTML = `Livro#${products.id}`;  
+
+      const livro_tit_h5 = document.createElement("h5");
+      livro_tit_h5.setAttribute("class", "card-title");
+      livro_tit_h5.innerHTML = `${products.titulo}`;  
+
+
+      const livro_des_p = document.createElement("p");
+      livro_des_p.setAttribute("class", "card-text truncate-1l");
+      livro_des_p.innerHTML = `${products.descricao}`;  
+
+      const livro_aut_h5 = document.createElement("h5");
+      livro_aut_h5.setAttribute("class", "card-title");
+      livro_aut_h5.innerHTML = `${products.autor}`;  
+
+      const livro_est_p = document.createElement("p");
+      livro_est_p.setAttribute("class", "card-text truncate-1l");
+      livro_est_p.innerHTML = `${products.estado}`;  
+
+
+      const a_tel = document.createElement('a')
+      a_tel.setAttribute("class", "text-decoration-none");
+      a_tel.innerHTML = `${products.telefone}`;  
+
+
+
+
+
+
+// footer 
+
+
+      const div_card_footer = document.createElement('div')
+      div_card_footer.setAttribute("class", "card-footer");
+
+      const form_footer = document.createElement('form')
+      form_footer.setAttribute("class", "d-block");
+
+
+
+
+
+       const btn_edi = document.createElement("BUTTON");
+       btn_edi.setAttribute("id", "editar");
+       btn_edi.setAttribute("class", "btn btn-purple");
+       btn_edi.setAttribute("onClick", "editar("+btn_log+");");
+       btn_edi.setAttribute("data-toggle", "modal");
+       btn_edi.setAttribute("data-target", "#modal_livros");
+       btn_edi.innerHTML = "Editar";  
+
+
+       const btn_del = document.createElement("BUTTON");
+       btn_del.setAttribute("id", "deletar");
+       btn_del.setAttribute("class", "btn btn-dark");
+       btn_del.setAttribute("onClick", "deletar("+btn_log+");");
+       btn_del.innerHTML = "Deletar";  
+
+       btn_log = btn_log + 1;
+
+
+   
+        bylivros.appendChild(div_flex)
+        div_flex.appendChild(div_card)
+
+        div_card.appendChild(a_card)
+        div_card.appendChild(img_card)
+
+        div_card.appendChild(div_card_body)
+        div_card_body.appendChild(livro_cod_h5)
+        div_card_body.appendChild(livro_tit_h5)
+        div_card_body.appendChild(livro_des_p)
+        div_card_body.appendChild(livro_aut_h5)
+        div_card_body.appendChild(livro_est_p)
+        div_card_body.appendChild(a_tel)
+
+        div_card.appendChild(div_card_footer)
+        div_card_footer.appendChild(btn_edi)
+        div_card_footer.appendChild(btn_del)
+
+
+  
+
+    })
+  }
+
+
+
+
+  $( "#update" ).click(function() {
+
+
+
+            
+   var titulo_ = document.getElementById('titulo').value;
+   var descricao_ = document.getElementById('descricao').value;
+   var autor_ = document.getElementById('autor').value;
+   var estado_ = document.getElementById('estado').value;
+   var telefone_ = document.getElementById('telefone').value;
+
+   var livro_aux = document.getElementById('id_livro').textContent;
+
+   var livro_id = livro_aux.split('#');
+
+
+     const body = {
+           titulo: titulo_,
+           autor: autor_,
+           descricao: descricao_,
+           estado: estado_,
+           telefone: telefone_
+   };
+
+
+    if(titulo === "") {
+        window.location.replace("http://localhost:8080/pages");
+
+
+
+   }else{
+         axios.put(`http://localhost:3333/products/${livro_id[1]}/`, body)
+        .then(function (response) {
+           console.log(response)
+           document.location.reload(true);
+           
+       })
+         .catch(function (error) {
+           console.log(error)
+          
+          });
+    }
+ 
+ 
+  
+
+});
+
+
+
+</script>

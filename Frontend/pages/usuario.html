@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="http://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Usuario :: Book's Homes</title>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a name="topo"></a>
+    <nav class="navbar" style="background-color: #1a1a1a;">
+        <div class="container">
+            <h1 style="color: #FFF">Bem vindo</h1>
+            <a href="index.html" class="text-decoration-none" style="color: #FFF">Home</a>
+            <a href="listadesejos.html" class="nav-link" style="color: #FFFF;">
+                <svg class="bi" width="20" height="20" fill="currentColor">
+                    <use xlink:href="/bootstrap-icons.svg#heart-fill" />
+                </svg>		
+            </a>
+        </div>
+      </nav>
+    <main>
+        <div class="container">
+            <br>
+            <form>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <fieldset class="row">
+                            <legend>Dados Pessoais</legend>
+                            <div class="mb-3">
+                                <label for="text class=" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="txtNome">
+                            </div>
+                            <div class="col-md-6 col-x1-4">
+                                <label for="txtCPF" CPF class="form">CPF</label>
+                                <span class="form-text">(Somente números)</span>
+                                <input type="text" class="form-control" id="txtCPF">
+                            </div>
+                            <div class="col-md-6 col-x1-4">
+                                <label for="txtDataNascimento" CPF class="form">Data de Nascimento</label>
+                                <input type="date" class="form-control" id="txtDataNascimento">
+                            </div>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Contatos</legend>
+                            <div class="mb-3 col-md-8">
+                                <label for="textEmail=" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="txtEmail"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="texttelefone=" class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" id="txtTelefone" placeholder="28999777666">
+                                <span class="form-text">(com DDD, somente números)</span>
+                            </div>
+
+                        </fieldset>
+                    </div>
+                    <div class="col">
+                        <fieldset>
+                            <legend>Endereço</legend>
+                            <div class="mb-3 col-md-6 col-lg-4">
+                                <label for="texCEP" class="form-label"> CEP</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="txtCEP">
+
+                                </div>
+                            </div>
+                            <div class="mb-3 col-md-6 col-lg-8 align-self-end">
+                                <textarea class="form-control text-muted bg-light"
+                                    style="height:68px;"> Digite o CEP para buscarmos o endereço. </textarea>
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <label for="textNumero=" class="form-label">Número</label>
+                                <input type="text" class="form-control" id="txtNumero">
+
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <label for="textComplemento=" class="form-label">Complemento</label>
+                                <input type="text" class="form-control" id="txtComplemento">
+                            </div>
+
+                        </fieldset>
+
+                        <a class="btn btn-purple" href="">Editar informações</a>
+                        <a class="btn btn-purple" href="">Excluir cadastro</a>
+                        <a class="btn btn-purple" href="cadastrar_livro.html">Cadastrar livro</a>
+                        <a class="btn btn-dark" href="index.html">Cancelar</a>
+                
+                    </div>
+                </div>
+                <br>
+                <hr>
+            </form>
+            <br>
+            <h4>Meus livros</h4>
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-5 col-sm-7 d-flex align-items-stretch">
+					<div class="card text-center bg-light">
+						<img src="/pages/img/no-image-available.jpg" class="card-img-top"
+							alt="Harry Potter e a Pedra Filosofal">
+						<div class="card-hearder">
+							R$ 30,00
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Harry Potter e a Pedra Filosofal</h5>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-xl-3 col-lg-4 col-md-5 col-sm-7 d-flex align-items-stretch">
+					<div class="card text-center bg-light">
+						<img src="/pages/img/no-image-available.jpg" class="card-img-top"
+							alt="Harry Potter e a Pedra Filosofal">
+						<div class="card-hearder">
+							R$ 30,00
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Come, Reza, Ama.</h5>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-xl-3 col-lg-4 col-md-5 col-sm-7 d-flex align-items-stretch">
+					<div class="card text-center bg-light">
+						<img src="/pages/img/no-image-available.jpg" class="card-img-top"
+							alt="Harry Potter e a Pedra Filosofal">
+						<div class="card-hearder">
+							R$ 30,00
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Assassinato no Expresso do Oriente</h5>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-xl-3 col-lg-4 col-md-5 col-sm-7 d-flex align-items-stretch">
+					<div class="card text-center bg-light">
+						<img src="/pages/img/no-image-available.jpg" class="card-img-top"
+							alt="Harry Potter e a Pedra Filosofal">
+						<div class="card-hearder">
+							R$ 30,00
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Os Garotos Corvos</h5>
+						</div>
+					</div>
+
+				</div>
+            </div>
+            <br>
+            <br><br><br><br>
+        </div>
+    </main>
+    <footer class="border-top text-muted bg-light">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-12 col-md-4 text-center">
+                    <a href="contato.html" class="text-decoration-none" style="color: #868686">Sobre nós</a>
+                </div>
+                <div class="col-12 col-md-4 text-center text-md-left">
+                    &copy; 2021 - Book's Home
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <a href="#topo" class="text-decoration-none" style="color: #868686">Voltar ao topo</a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

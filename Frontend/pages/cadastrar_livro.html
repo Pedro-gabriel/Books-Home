@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="http://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Cadastrar Livro :: Book's Homes</title>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a name="topo"></a>
+    <nav class="navbar" style="background-color: #1a1a1a;">
+        <br><br><br>
+            <div class="container">
+                <h2 style="color: #FFF">Informe os dados do livro</h2>
+                <a href="index.html" class="text-decoration-none" style="color: #FFF">Home</a>
+            </div>
+          </nav>
+          <br>
+    <main>
+        <div class="container">
+            <br>
+            <form onsubmit="return false;">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <fieldset class="row">
+                            <div class="mb-3">
+                                <label for="text class=" class="form-label">Título</label>
+                                <input type="text" class="form-control" id="titulo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="text class=" class="form-label">Autor</label>
+                                <input type="text" class="form-control" id="autor">
+                            </div>
+                            <div class="mb-3">
+                                <label for="text class=" class="form-label">Descrição</label>
+                                <input type="text" class="form-control" id="descricao">
+                            </div>
+                            <div>
+                                <label for="text class=" class="form-label">Você considera o estado atual do seu livro como:</label>
+                          <select name="estado" id="estado" class="form-control">
+                            <option value="Novo">Novo</option>
+                            <option value="Velho">Velho</option>
+                          </select>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="mb-3">
+                                <br>
+                                <label for="texttelefone=" class="form-label">Link do whatsapp ou telefone</label>
+                                <input type="tel" class="form-control" id="telefone" placeholder="28999777666">
+                            </div>
+
+                        </fieldset>
+                    </div>
+                    
+                </div>
+                <hr>
+                
+                <a class="btn btn-dark" href="index.html">Cancelar</a>
+                <input type="button" class="btn btn-purple" value="Confirmar Cadastro" style="border-color:#a700a7;" id="cadastrar">
+
+            </form>
+            <br>
+            <br>
+        </div>
+    </main>
+    <footer class="border-top text-muted bg-light">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-12 col-md-4 text-center">
+                    <a href="contato.html" class="text-decoration-none" style="color: #868686">Sobre nós</a>
+                </div>
+                <div class="col-12 col-md-4 text-center text-md-left">
+                    &copy; 2021 - Book's Home
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <a href="#topo" class="text-decoration-none" style="color: #868686">Voltar ao topo</a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
+   <script type="text/javascript" src="https://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+
+<script type="text/javascript">
+
+ 
+    
+    $( "#cadastrar" ).click(function() {
+            
+  var titulo_ = document.getElementById('titulo').value;
+  var autor_ = document.getElementById('autor').value;
+  var descricao_ = document.getElementById('descricao').value;
+  var estado_ = document.getElementById('estado').value;
+  var telefone_ = document.getElementById('telefone').value;
+
+
+ // var user_id_ = String(logado_key);
+
+
+
+
+
+
+    const body = {
+          titulo: titulo_,
+          autor: autor_,
+          descricao: descricao_,
+          estado: estado_,
+          telefone: telefone_
+  };
+   
+
+  if(titulo_ === "") {
+      window.location.replace("http://localhost:8080/pages");
+
+
+
+  }else{
+        axios.post('http://localhost:3333/products', body)
+        .then(function (response) {
+          console.log(response)
+          window.location.replace("http://localhost:8080/pages/index.html");
+        })
+        .catch(function (error) {
+          console.log(error)
+          
+        });
+  }
+ 
+  
+
+
+
+});
+
+</script>
